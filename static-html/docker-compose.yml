@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  static-html:
+    container_name: static-html
+    image: nginx:alpine
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: static-html.foresee.icu
+      LETSENCRYPT_HOST: static-html.foresee.icu
+      LETSENCRYPT_EMAIL: 437808@gmail.com
+    volumes:
+      - ./src:/usr/share/nginx/html
+
+networks:
+  default:
+    external:
+      name: nginx-proxy

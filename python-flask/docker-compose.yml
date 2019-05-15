@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  python-flask:
+    container_name: python-flask
+    build: .
+    image: python-flask:0.1
+    expose:
+      - 80
+    environment:
+      VIRTUAL_HOST: python-flask.foresee.icu
+      LETSENCRYPT_HOST: python-flask.foresee.icu
+      LETSENCRYPT_EMAIL: 437808@gmail.com
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
