@@ -10,6 +10,10 @@ services:
       VIRTUAL_HOST: static-html.foresee.icu
       LETSENCRYPT_HOST: static-html.foresee.icu
       LETSENCRYPT_EMAIL: 437808@gmail.com
+    depends_on:
+      - nginx-proxy
+      - nginx-proxy-gen
+      - nginx-proxy-le
     volumes:
       - ./src:/usr/share/nginx/html
     restart: unless-stopped

@@ -46,6 +46,10 @@ services:
       VIRTUAL_HOST: app.example.com
       LETSENCRYPT_HOST: app.example.com
       LETSENCRYPT_EMAIL: foo@example.com
+    depends_on:
+      - nginx-proxy
+      - nginx-proxy-gen
+      - nginx-proxy-le
     restart: unless-stopped
 
 networks:
