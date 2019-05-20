@@ -12,6 +12,7 @@ services:
       LETSENCRYPT_EMAIL: 437808@gmail.com
     volumes:
       - ./src:/usr/share/nginx/html
+    restart: unless-stopped
 
 networks:
   default:

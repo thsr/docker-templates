@@ -11,6 +11,7 @@ services:
       VIRTUAL_HOST: python-flask.foresee.icu
       LETSENCRYPT_HOST: python-flask.foresee.icu
       LETSENCRYPT_EMAIL: 437808@gmail.com
+    restart: unless-stopped
 
 networks:
   default:

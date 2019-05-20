@@ -13,7 +13,7 @@ services:
       - vhost:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
       - certs:/etc/nginx/certs:ro
-    restart: always
+    restart: unless-stopped
 
   docker-gen:
     container_name: nginx-proxy-gen
@@ -27,7 +27,7 @@ services:
       - certs:/etc/nginx/certs:ro
       - ./nginx.tmpl:/etc/docker-gen/templates/nginx.tmpl:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    restart: always
+    restart: unless-stopped
 
   letsencrypt:
     container_name: nginx-proxy-le
@@ -43,7 +43,7 @@ services:
     environment:
       - NGINX_PROXY_CONTAINER=nginx-proxy
       - NGINX_DOCKER_GEN_CONTAINER=nginx-proxy-gen
-    restart: always
+    restart: unless-stopped
 
 volumes:
   conf:
