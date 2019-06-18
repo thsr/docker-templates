@@ -7,17 +7,17 @@ services:
     image: python-flask:0.1
     expose:
       - 80
-    environment:
-      VIRTUAL_HOST: python-flask.foresee.icu
-      LETSENCRYPT_HOST: python-flask.foresee.icu
-      LETSENCRYPT_EMAIL: 437808@gmail.com
-    depends_on:
-      - nginx-proxy
-      - nginx-proxy-gen
-      - nginx-proxy-le
     restart: unless-stopped
+#     environment:
+#       VIRTUAL_HOST: python-flask.foresee.icu
+#       LETSENCRYPT_HOST: python-flask.foresee.icu
+#       LETSENCRYPT_EMAIL: 437808@gmail.com
+#     depends_on:
+#       - nginx-proxy
+#       - nginx-proxy-gen
+#       - nginx-proxy-le
 
-networks:
-  default:
-    external:
-      name: nginx-proxy
+# networks:
+#   default:
+#     external:
+#       name: nginx-proxy

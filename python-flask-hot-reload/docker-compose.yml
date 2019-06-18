@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  python-flask-hot-reload:
+    container_name: python-flask-hot-reload
+    build: .
+    image: python-flask-hot-reload:0.1
+    # expose:
+    #   - 80
+    ports:
+      - '5000:80'
+    volumes:
+      - ./src:/app
+    restart: unless-stopped
+#     environment:
+#       VIRTUAL_HOST: python-flask-hot-reload.foresee.icu
+#       LETSENCRYPT_HOST: python-flask-hot-reload.foresee.icu
+#       LETSENCRYPT_EMAIL: 437808@gmail.com
+#     depends_on:
+#       - nginx-proxy
+#       - nginx-proxy-gen
+#       - nginx-proxy-le
+
+# networks:
+#   default:
+#     external:
+#       name: nginx-proxy
