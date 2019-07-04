@@ -2,9 +2,7 @@ version: '3'
 
 services:
   python-flask-hot-reload:
-    container_name: python-flask-hot-reload
     build: .
-    image: python-flask-hot-reload:0.1
     # expose:
     #   - 80
     ports:

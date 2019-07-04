@@ -2,7 +2,6 @@ version: '3'
 
 services:
   static-html:
-    container_name: static-html
     image: nginx:alpine
     expose:
       - 80

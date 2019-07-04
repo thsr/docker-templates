@@ -16,9 +16,7 @@ services:
     restart: unless-stopped
 
   pythonflask:
-    container_name: pythonflask
     build: .
-    image: pythonflask:0.1
     expose:
       - 80
     ports:

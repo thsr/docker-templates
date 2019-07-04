@@ -2,7 +2,5 @@ version: '3'
 
 services:
   crontab:
-    container_name: crontab
     build: .
-    image: crontab:0.1
     restart: unless-stopped
